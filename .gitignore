@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+
+# catboost
+catboost_info/
+notebook/catboost_info/
+
+# results
+results/
+data/final_data/
+
+# venv
+venv/

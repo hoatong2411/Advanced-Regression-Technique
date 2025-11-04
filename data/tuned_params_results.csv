@@ -1,0 +1,13 @@
+﻿Group,Model,Best_RMSE,Best_Params
+Linear_Models,Ridge,28382.03698246696,{'alpha': 0.9856181490173211}
+Linear_Models,Lasso,28316.558058508548,{'alpha': 0.037731824509592664}
+Linear_Models,ElasticNet,28382.73391996125,"{'alpha': 0.001184400190641313, 'l1_ratio': 0.3384932629674091}"
+Linear_Models,Huber,27595.39979973064,"{'epsilon': 1.9483488506777957, 'alpha': 0.00010141459551846301}"
+Linear_Models,Quantile,27881.33745999291,"{'alpha': 0.00011042291683693513, 'quantile': 0.6098722854504476}"
+Tree_Models,RF,28199.72608245148,"{'n_estimators': 328, 'max_depth': 13, 'min_samples_split': 2}"
+Tree_Models,XGB,25570.52742864582,"{'n_estimators': 959, 'max_depth': 7, 'learning_rate': 0.012337978312097196, 'subsample': 0.6470374600333194, 'colsample_bytree': 0.7094400031217016}"
+Tree_Models,GB,25758.58181596848,"{'n_estimators': 389, 'max_depth': 5, 'learning_rate': 0.05013345298297797, 'subsample': 0.6701289908928015}"
+Tree_Models,LGBM,27705.42073991745,"{'n_estimators': 290, 'num_leaves': 31, 'learning_rate': 0.020594634967196688, 'subsample': 0.8827028196477864}"
+Tree_Models,ADB,33117.41809026296,"{'n_estimators': 384, 'learning_rate': 0.09251020019939125}"
+Special_Models,CatBoost,26381.49203752993,"{'depth': 6, 'learning_rate': 0.04623095361223063, 'iterations': 901, 'l2_leaf_reg': 5.053705903605451}"
+Special_Models,RANSAC,25961.404812837496,"{'estimator': 'Ridge', 'alpha_ridge': 0.38009179954214223, 'min_samples': 0.3024460604337984, 'max_trials': 211}"

@@ -1,0 +1,52 @@
+{
+    "outlier_method": {
+        "Linear_Models": "iqr",
+        "Tree_Models": "iqr",
+        "Special_Models": "iqr"
+    },
+    "imputer_type": {
+        "Linear_Models": "simple",
+        "Tree_Models": "knn",
+        "Special_Models": "simple"
+    },
+    "knn_neighbors": {
+        "Tree_Models": 9,
+        "Linear_Models": 5,
+        "Special_Models": 5
+    },
+    "input_transform": {
+        "Linear_Models": "org",
+        "Tree_Models": "log",
+        "Special_Models": "org"
+    },
+    "target_transform": {
+        "Linear_Models": "sqrt",
+        "Tree_Models": "org",
+        "Special_Models": "log"
+    },
+    "scaler_type": {
+        "Linear_Models": "minmax",
+        "Tree_Models": "minmax",
+        "Special_Models": "minmax"
+    },
+    "encoder_type": {
+        "Linear_Models": "target",
+        "Tree_Models": "target",
+        "Special_Models": "target"
+    },
+    "target_encoder_smoothing": {
+        "Linear_Models": 100,
+        "Special_Models": 100,
+        "Tree_Models": 10
+    },
+    "poly_features": {
+        "Linear_Models": false,
+        "Tree_Models": false,
+        "Special_Models": false
+    },
+    "multicollinearity": {
+        "Linear_Models": null,
+        "Tree_Models": null,
+        "Special_Models": null
+    }
+}
