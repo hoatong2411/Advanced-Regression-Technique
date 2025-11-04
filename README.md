@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# Advanced-Regression-Technique
-Pipelines dự đoán giá nhà Ames Housing với EDA, feature engineering, optimize preprocessing, tuning và ensemble
-=======
 # Ames Housing Price Prediction - Advanced Regression Technique
 
 ## Tổng quan
@@ -53,8 +49,8 @@ project
 Cài nhanh:
 ````bash
 # Clone repository
-git clone <repo-url>
-cd "New Project 5"
+git clone https://github.com/hoatong2411/Advanced-Regression-Technique/
+cd Project
 
 # Cài dependencies
 pip install -r requirements.txt
