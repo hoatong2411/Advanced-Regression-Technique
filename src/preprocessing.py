@@ -16,11 +16,42 @@ from .transformation import (
     winsorize_normalize, iqr_cap, SafeYeoJohnson,
     BoxCoxTransformer, safe_clip
 )
+from statsmodels.stats.outliers_influence import variance_inflation_factor
+from sklearn.feature_selection import mutual_info_regression
 import warnings
 warnings.filterwarnings("ignore")
 
 RANDOM_STATE = 42
 
+def calculate_vif(df, features=None):
+    if features is None:
+        features = df.select_dtypes(include=["int64", "float64"]).columns.tolist()
+        # Loại bỏ target nếu có
+        if "SalePrice" in features:
+            features.remove("SalePrice")
+    
+    X = df[features].copy()
+    X = X.fillna(X.mean())
+    vif = pd.DataFrame()
+    vif["Feature"] = features
+    vif["VIF"] = [variance_inflation_factor(X.values, i) for i in range(X.shape[1])]
+    return vif.sort_values("VIF", ascending=False)
+
+def calculate_mi(df, target="SalePrice", features=None):
+    if features is None:
+        features = df.select_dtypes(include=["int64", "float64"]).columns.drop(target, errors="ignore")
+    
+    X = df[features].copy()
+    X = X.fillna(X.mean())
+    y = df[target]
+    
+    # Scale để MI ổn định hơn
+    scaler = MinMaxScaler()
+    X_scaled = scaler.fit_transform(X)
+    
+    mi_scores = mutual_info_regression(X_scaled, y, random_state=42)
+    mi = pd.DataFrame({"Feature": features, "MI_Score": mi_scores})
+    return mi.sort_values("MI_Score", ascending=False)
 
 def handle_missing_and_encode(df):
     """Ames-specific: ordinal + fill + one-hot"""
